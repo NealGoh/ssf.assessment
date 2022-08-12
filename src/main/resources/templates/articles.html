@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latest News Articles</title>
+    </head>
+    <body>
+        
+        <h1>Crypto News of the day</h1>
+        <form method="POST" action="/articles">
+            <button style="margin-right: 10wv" type="submit">Save</button>
+        </form>
+            <div data-th-each="a: ${articles}">
+                <table style="border: 10px, color black;">
+                    <tr>
+                        <td style="width: 30%;">
+                            <img data-th-src="${a.imageurl}" alt="">
+                        </td>
+                        <td>
+                            <span data-th-text="${a.id}">Id:</span>
+                            <br>
+                            <span data-th-text="${a.title}"></span>
+                            <br>
+                            <span data-th-text="${a.body}"></span>
+                            <br>
+                            <span data-th-text="${a.categories}">Categories:</span>
+                            <br>
+                            <span data-th-text="${a.tags}">Tags:</span>
+                            <br>
+                            <span data-th-text="${a.published_on}">Published:</span>
+                            <span data-th-text="${a.url}"></span>
+                            <label>
+                                <input type="checkbox" >Save
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+        
+            </div>
+    </body>
+</html>
